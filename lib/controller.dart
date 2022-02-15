@@ -16,7 +16,6 @@ class DataController extends GetxController{
       var response = await Dio().get(
           'https://api.themoviedb.org/3/discover/movie?api_key=26763d7bf2e94098192e629eb975dab0&page=' +
               page.toString());
-      print('-----------------${response.data['results']}');
       if (response.data is Map && response.data['results'] is List) {
         items = response.data['results'];
       }else if(response.data is List) {
